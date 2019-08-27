@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:padding="10dp"
+    android:background="@drawable/gradient_bg"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <ProgressBar
+        android:id="@+id/register_progress_bar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/reg_login_form"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:textColorHint="#fff"
+            android:id="@+id/reg_username"
+            android:hint="Username"
+            android:layout_width="match_parent"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:layout_marginBottom="16dp"
+            android:layout_height="wrap_content"/>
+
+        <AutoCompleteTextView
+            android:textColorHint="#fff"
+            android:id="@+id/reg_email"
+            android:layout_width="match_parent"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/reg_password"
+            android:textColorHint="#fff"
+            android:hint="Password"
+            android:layout_width="match_parent"
+            android:maxLines="1"
+            android:layout_marginTop="16dp"
+            android:inputType="textPassword"
+            android:layout_height="wrap_content"/>
+
+
+
+        <Button
+            android:id="@+id/register_button"
+            android:textColor="@color/colorAccent"
+            android:text="Register Now"
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:elevation="10dp"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"/>
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
