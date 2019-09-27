@@ -90,6 +90,7 @@ public class JournalListActivity extends AppCompatActivity {
                 {
                     firebaseAuth.signOut();
                     startActivity(new Intent(JournalListActivity.this, MainActivity.class));
+                    finish();
                 }
                 break;
         }

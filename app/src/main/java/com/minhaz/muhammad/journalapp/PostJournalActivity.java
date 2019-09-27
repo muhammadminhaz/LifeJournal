@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -60,6 +62,8 @@ public class PostJournalActivity extends AppCompatActivity implements View.OnCli
         storageReference = FirebaseStorage.getInstance().getReference();
 
         firebaseAuth = FirebaseAuth.getInstance();
+        user = firebaseAuth.getCurrentUser();
+
         progressBar = findViewById(R.id.post_progress);
         titleEditText = findViewById(R.id.post_title);
         thoughtsEditText = findViewById(R.id.post_description);
@@ -177,6 +181,28 @@ public class PostJournalActivity extends AppCompatActivity implements View.OnCli
         else {
             progressBar.setVisibility(View.INVISIBLE);
         }
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_post,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.action_post)
+        {
+            if(user!=null && firebaseAuth!=null)
+            {
+                startActivity(new Intent(PostJournalActivity.this, JournalListActivity.class));
+                finish();
+
+            }
+
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

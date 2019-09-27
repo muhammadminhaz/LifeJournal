@@ -1,2 +1,2 @@
-include ':app', ':LearnJava'
+include ':app', ':LearnJava', ':easy'
 rootProject.name='Journal App'
